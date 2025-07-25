@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://6gs1co40iep7"]
 
 [ext_resource type="Texture2D" uid="uid://gdc552rqs3u3" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_a8qts"]
-[ext_resource type="Shader" uid="uid://bca1e0ctsd0lo" path="res://scenes/objects/trees/tree_shader.gdshader" id="1_w057i"]
+[ext_resource type="Shader" uid="uid://bca1e0ctsd0lo" path="res://scenes/objects/shake.gdshader" id="1_w057i"]
 [ext_resource type="Script" uid="uid://dy4yrxfsdmt1h" path="res://scenes/objects/trees/small_tree.gd" id="2_g5iuu"]
 [ext_resource type="PackedScene" uid="uid://vaulg6pf1q86" path="res://scenes/components/hurt_component.tscn" id="2_xyb6m"]
 [ext_resource type="PackedScene" uid="uid://c2jlcogjusl5i" path="res://scenes/components/damage_component.tscn" id="3_au4vd"]
@@ -35,6 +35,7 @@ position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_au4vd")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_xyb6m")]
+tool = 1
 
 [node name="HurtComponentCollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 shape = SubResource("RectangleShape2D_au4vd")
