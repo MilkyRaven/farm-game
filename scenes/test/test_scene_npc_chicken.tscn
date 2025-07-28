@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=4 uid="uid://bl1883ifs31ym"]
+[gd_scene load_steps=5 format=4 uid="uid://bl1883ifs31ym"]
 
 [ext_resource type="TileSet" uid="uid://bcuwjymlr583e" path="res://tilesets/game_scene_tilemap.tres" id="1_ardmt"]
 [ext_resource type="PackedScene" uid="uid://cngxq8eq3y013" path="res://scenes/characters/player/player.tscn" id="2_6nbhr"]
 [ext_resource type="PackedScene" uid="uid://ck3rimino88hm" path="res://scenes/characters/chicken/chicken.tscn" id="2_a4sac"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_6nbhr"]
+vertices = PackedVector2Array(315.367, 64.7812, 344.82, 111.062, 310.867, 196.812, 211.688, 209.211, 179.523, 146.609, 198.023, 60.3125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(190, 50, 321, 55, 356, 110, 318, 206, 206, 220, 169, 148)])
 
 [node name="TestSceneNPCChicken" type="Node2D"]
 y_sort_enabled = true
@@ -38,5 +43,34 @@ position = Vector2(167, 109)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="Chicken" parent="." instance=ExtResource("2_a4sac")]
-position = Vector2(199, 79)
+[node name="Chickens" type="Node2D" parent="."]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
+navigation_polygon = SubResource("NavigationPolygon_6nbhr")
+
+[node name="Chicken" parent="Chickens" instance=ExtResource("2_a4sac")]
+position = Vector2(241, 81)
+
+[node name="Chicken2" parent="Chickens" instance=ExtResource("2_a4sac")]
+position = Vector2(225, 109)
+
+[node name="Chicken3" parent="Chickens" instance=ExtResource("2_a4sac")]
+position = Vector2(276, 146)
+
+[node name="Chicken4" parent="Chickens" instance=ExtResource("2_a4sac")]
+position = Vector2(295, 114)
+
+[node name="Chicken5" parent="Chickens" instance=ExtResource("2_a4sac")]
+position = Vector2(257, 112)
+
+[node name="Chicken6" parent="Chickens" instance=ExtResource("2_a4sac")]
+position = Vector2(284, 95)
+
+[node name="Chicken7" parent="Chickens" instance=ExtResource("2_a4sac")]
+position = Vector2(258, 87)
+
+[node name="Chicken8" parent="Chickens" instance=ExtResource("2_a4sac")]
+position = Vector2(292, 132)
+
+[node name="Chicken9" parent="Chickens" instance=ExtResource("2_a4sac")]
+position = Vector2(262, 132)
